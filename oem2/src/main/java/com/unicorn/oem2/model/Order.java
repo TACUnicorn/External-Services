@@ -2,7 +2,7 @@ package com.unicorn.oem2.model;
 
 public class Order {
     private int id;
-    private int productId;
+    private int materialId;
     private int num;
     private int price;
 
@@ -14,12 +14,12 @@ public class Order {
         this.id = id;
     }
 
-    public int getProductId() {
-        return productId;
+    public int getMaterialId() {
+        return materialId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setMaterialId(int materialId) {
+        this.materialId = materialId;
     }
 
     public int getNum() {

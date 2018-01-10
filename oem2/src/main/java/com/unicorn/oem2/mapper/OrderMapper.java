@@ -9,15 +9,9 @@ import java.util.ArrayList;
 @Mapper
 @Service
 public interface OrderMapper {
-    @Select("select * from orders;")
-    @Results({
-            @Result(property = "productId", column = "p_id")
-    })
-    ArrayList<Order> getOrders();
-
-    @Select("insert into orders(p_id, num) values (#{productId}, #{num})")
+    @Select("insert into orders(material_id, num, price) values (#{materialId}, #{num}, #{price})")
     void add(Order order);
 
     @Select("select price from material where id = #{id}")
-    int getProduct(@Param("id") int id);
+    int getMaterialPrice(@Param("id") int id);
 }
