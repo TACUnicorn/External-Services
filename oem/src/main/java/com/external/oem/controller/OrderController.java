@@ -13,20 +13,13 @@ public class OrderController {
     @Autowired
     public OrderService orderService;
 
-    @GetMapping(value = "/oem", produces = {"application/json"})
-    @ResponseBody
-    public ArrayList<Order> getOrders() {
-        return orderService.getOrders();
-    }
-
     @PostMapping(value = "/oem/order", produces = {"application/json"})
-    public boolean postOrder(@RequestParam int productId, @RequestParam int num) {
+    public int postOrder(@RequestParam int materialId, @RequestParam int num) {
         try {
-            orderService.postOrder(productId, num);
-            return true;
+            return orderService.postOrder(materialId, num);
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
+            return 0;
         }
     }
 }
