@@ -4,8 +4,6 @@ import com.unicorn.oem2.model.Order;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-
 @Mapper
 @Service
 public interface OrderMapper {
